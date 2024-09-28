@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página com Abas</title>
+  <style>
+    .tab {
+      overflow: hidden;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav button {
+      border: none;
+      outline: none;
+      padding: 0 10px;
+      background-color: inherit;
+      height: 30px;
+      margin: 0;
+    }
+
+    nav button:hover {
+      color: blue;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    button.buttonActive {
+      font-weight: bold;
+      color: blue;
+    }
+
+    /* Estilos para o conteúdo das abas */
+    .tabs section {
+      display: none;
+    }
+
+    section .tabActive {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <h2>Faculdade de Computação</h2>
+    <div class="tab">
+      <li><button>Bacharelado em Computação</button></li>
+      <li><button>Ciências da Informação</button></li>
+      <li><button>Mestrado | Doutorado</button></li>
+    </div>
+  </nav>
+  <section class="tabs">
+    <section>
+      <h3>Bacharelado em Computação</h3>
+      <p>O Curso de Bacharelado em Ciência da Computação é o marco inicial da Faculdade de Computação. Foi criado em
+        1988
+        e teve o seu reconhecimento em 11 de fevereiro de 1993 por meio da Portaria 181/93 do MEC. O objetivo do Curso é
+        formar profissionais da área de Informática com competência no desenvolvimento de software, atendendo
+        adequadamente as exigências de mercado de trabalho, além de capacitar o egresso a concluir com sucesso programas
+        de pós-graduação.</p>
+    </section>
+
+    <section>
+      <h3>Ciências da Informação</h3>
+      <p>Conteúdo sobre Ciências da Informação.</p>
+    </section>
+
+    <section>
+      <h3>Mestrado | Doutorado</h3>
+      <p>Conteúdo sobre Mestrado e Doutorado.</p>
+    </section>
+  </section>
+  <script>
+    window.onload = () => {
+      buttons = document.querySelectorAll("nav button");
+      for (const button of buttons) {
+        button.onclick = changeTab;
+      }
+      openTab(0);
+    }
+
+    function changeTab(e) {
+      // do botao, pega o parentNode pra conseguir achar o index do botao que foi clicado e assim chama a funcao openTab
+      const botaoAcionado = e.target;
+      const liDoBotao = botaoAcionado.parentNode;
+      const nodes = Array.from(liDoBotao.parentNode.children);
+      const index = nodes.indexOf(liDoBotao);
+      openTab(index);
+    }
+
+    function openTab(i) {
+      const tabActive = document.querySelector(".tabActive");
+      const buttonActive = document.querySelector(".buttonActive");
+
+      //ao escolher um tab, remover as classes ativas
+      if (tabActive !== null)
+        tabActive.classList.remove("tabActive");
+
+      if (buttonActive !== null)
+        buttonActive.classList.remove("buttonActive");
+
+      // com o index do botao, adiciona aos respectivos sections e button as classes ativas
+      document.querySelectorAll(".tabs section")[i].classList.add("tabActive");
+      document.querySelectorAll("nav button")[i].classList.add("buttonActive");
+    }
+  </script>
+
+</body>
+
+</html>

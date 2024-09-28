@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex3</title>
+  <style>
+    body {
+      width: 60%;
+      margin: 0 auto;
+      padding: 2% 0;
+      background-color: #ddd;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    main {
+      background-color: white;
+      padding: 3%;
+      border-radius: 1%;
+    }
+
+    section:not(:first-of-type) {
+      margin-top: 0px;
+      padding-bottom: 5px;
+      border-top: solid 1px gray
+    }
+
+
+    span {
+      color: red;
+    }
+
+    label,
+    button,
+    span {
+      display: block;
+    }
+
+    form {
+      display: flex;
+      flex-flow: column;
+      gap: 10px;
+      align-items: start;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section>
+      <h2>Cadastro de usuário</h2>
+      <form name="cadastro" action="login.php" method="post">
+        <div>
+          <label for="usuario">Usuário:</label><input type="text" name="usuario" id="usuario"><span></span>
+        </div>
+        <div>
+          <label for="senha">Senha:</label><input type="password" name="senha" id="senha"><span></span>
+        </div>
+        <div>
+          <label for="email">Email:</label><input type="email" name="email" id="email"><span></span>
+        </div>
+        <button>Cadastrar</button>
+      </form>
+    </section>
+  </main>
+</body>
+<script>
+  // colocando no evento onsubmit a funcao submitform
+  document.forms.cadastro.onsubmit = submitForm;
+  function submitForm(e) {
+    let form = e.target;
+    let formValido = true;
+
+    //pegando as spans adjacentes ao input
+    let spanUsuario = form.usuario.nextElementSibling;
+    let spanSenha = form.senha.nextElementSibling;
+    let spanEmail = form.email.nextElementSibling;
+
+    // atribuindo vazio como padrão para resetar os valores delas
+    spanUsuario.textContent = "";
+    spanSenha.textContent = "";
+    spanEmail.textContent = "";
+
+    //verificando os valores do formulario para inserir os textos nas spans
+    if (form.usuario.value === "") {
+      spanUsuario.textContent = "Usuário deve ser preenchido";
+      formValido = false;
+    }
+
+    if (form.senha.value === "") {
+      spanSenha.textContent = "A senha deve ser preenchida";
+      formValido = false;
+    }
+
+    if (form.email.value === "") {
+      spanEmail.textContent = "O email deve ser preenchido";
+      formValido = false;
+    }
+
+    //caso o form não seja válido, não permitir o envio
+    if (!formValido) {
+      e.preventDefault();
+    }
+
+  }
+
+</script>
+
+</html>

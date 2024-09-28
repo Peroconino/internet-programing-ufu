@@ -1,0 +1,37 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex03</title>
+</head>
+
+<body>
+  <input type="text" name="altura" placeholder="Sua altura em centimetros">
+  <label><input type="radio" name="sexo" value="masculino" checked> Masculino</label>
+  <label><input type="radio" name="sexo" value="feminino"> Feminino</label>
+  <button type="button">Clique aqui para saber seu peso ideal</button>
+  <p></p>
+  <img src="ex03.png" alt="ex02">
+  <script>
+    const botao = document.querySelector("button");
+
+    botao.onclick = () => {
+      const altura = document.querySelector('input[name="altura"]').value
+      const sexo = document.querySelector('input[name="sexo"]').checked
+      const campoNome = document.querySelector("input");
+      const parSaida = document.querySelector("p");
+
+      let pesoideal;
+      if (sexo) {
+        pesoideal = 52 + (0.75 * (parseInt(altura) - 152.4));
+      } else {
+        pesoideal = 52 + (0.67 * (parseInt(altura) - 152.4));
+      }
+
+      parSaida.textContent = 'Seu peso ideal é ' + pesoideal.toFixed(2);
+    }
+  </script>
+</body>
+
+</html>

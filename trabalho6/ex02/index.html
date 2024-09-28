@@ -1,0 +1,25 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex02</title>
+</head>
+
+<body>
+  <input type="text" name="nome">
+  <button type="button">Digite seu nome e clique aqui</button>
+  <p></p>
+  <img src="ex02.png" alt="ex02">
+  <script>
+    const botao = document.querySelector("button");
+    botao.onclick = () => {
+      const campoNome = document.querySelector("input");
+      const parSaida = document.querySelector("p");
+
+      parSaida.textContent = 'Obrigado, ' + campoNome.value;
+    }
+  </script>
+</body>
+
+</html>

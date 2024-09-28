@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex3</title>
+  <style>
+    body {
+      width: 60%;
+      margin: 0 auto;
+      padding: 2% 0;
+      background-color: #ddd;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    main {
+      background-color: white;
+      padding: 3%;
+      border-radius: 1%;
+    }
+
+    section:not(:first-of-type) {
+      margin-top: 0px;
+      padding-bottom: 5px;
+      border-top: solid 1px gray
+    }
+
+    ol {
+      width: 20%;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      background-color: rgb(128, 219, 241);
+      border-radius: 2px;
+      border: 1px solid blue;
+      padding: 0 10px;
+    }
+
+    span {
+      color: red;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section>
+      <form name="lista">
+        <label for="interesse">Interesse: <input type="text" name="interesse"></label>
+      </form>
+      <ol></ol>
+    </section>
+  </main>
+</body>
+<script>
+  document.forms.lista.onsubmit = submitForm;
+  function submitForm(e) {
+    let form = e.target;
+    e.preventDefault();
+    const list = document.body.querySelector("ol");
+
+    const element = document.createElement("li");
+    const content = document.createTextNode(form.interesse.value);
+    const exclude = document.createElement("span");
+
+    exclude.appendChild(document.createTextNode("x"));
+    element.appendChild(content);
+    element.appendChild(exclude);
+
+    exclude.onclick = () => {
+      element.remove()
+    }
+
+    list.appendChild(element);
+  }
+
+</script>
+
+</html>

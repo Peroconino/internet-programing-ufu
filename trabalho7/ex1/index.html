@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo de Oswaldo Cruz</title>
+  <style>
+    body {
+      width: 60%;
+      margin: 0 auto;
+      padding: 2% 0;
+      background-color: #ddd;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    main {
+      background-color: white;
+      padding: 3%;
+      border-radius: 1%;
+    }
+
+    h1,
+    h2 {
+      color: rgb(140, 76, 8);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    section:not(:first-of-type) {
+      margin-top: 0px;
+      padding-bottom: 5px;
+      border-top: solid 1px gray
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <section>
+      <img src="images/Oswcruz.jpg" alt="oswaldo cruz" width="120" height="120">
+      <h1>Oswaldo Cruz</h1>
+    </section>
+
+    <section>
+      <h2>Perfil</h2>
+      <p>
+        Pioneiro no estudo das moléstias tropicais e da microbiologia no Brasil, ingressou em 1900 como diretor técnico
+        do
+        Instituto Soroterápico Federal, no bairro de Manguinhos, no Rio de Janeiro, transformado em Instituto Oswaldo
+        Cruz, hoje a Fundação Oswaldo Cruz, respeitada internacionalmente. O diretor geral do Instituto Soroterápico
+        Federal era o barão de Pedro Affonso e a Oswaldo Cruz cabia, naquele momento, coordenar a produção de soros e
+        vacinas.
+
+        Em 1887, aos 15 anos, ingressou na Faculdade de Medicina do Rio de Janeiro, formando-se em 1892, com a tese A
+        vehiculação microbiana pelas aguas. Antes de concluir o curso, já tinha publicado dois artigos sobre
+        microbiologia
+        na revista Brazil-Médico.
+      </p>
+
+    </section>
+
+    <section>
+      <h2>Principais Competências</h2>
+      <ul>
+        <li>Médico</li>
+        <li>Imunologista</li>
+        <li>Bacteriologista</li>
+        <li>Epidemiologista</li>
+        <li>Sanitarista brasileiro</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Formação acadêmica</h2>
+      <p>Formado em medicina pela
+        <a href="https://www.medicina.ufrj.br/index.php/pt/">Faculdade
+          de Medicina de Rio de Janeiro</a>
+        , na <a href="https://ufrj.br/">Universidade Federal de Rio de Janeiro</a>.
+      </p>
+    </section>
+    <section>
+      <h2>Experiência Profissional</h2>
+      <ol>
+        <li>
+          Policinica Geral do Rio de Janeiro
+          <ul>
+            <li>
+              Chefe
+            </li>
+            <li>
+              Responsável pela montagem
+            </li>
+          </ul>
+        </li>
+        <li>
+          Instituto Pasteur
+          <ul>
+            <li>Discipulo de Émile Roux</li>
+            <li>Pesquisador</li>
+          </ul>
+        </li>
+      </ol>
+      <p><a href="experiencia.html">Veja as experiências profissionais em detalhes</a></p>
+    </section>
+
+    <section>
+      <h2>Contato</h2>
+      <div>
+        <p><img src="images/local.png" alt="local" width="30" height="30"> Fundação Oswaldo Cruz</p>
+        <p><img src="images/telefone.jpg" alt="telefone" width="30" height="30"><a href="tel:+662532-1844">(66)
+            2532-1844</a></p>
+        <p><img src="images/mail.jpg" alt="email" width="30" height="30"><a
+            href="mailto:fiocruz@hotmail.com">fiocruz@hotmail.com</a></p>
+      </div>
+    </section>
+</body>
+</main>
+<script>
+  const h2s = document.body.querySelectorAll("h2");
+
+  for (let h2 of h2s) {
+    const text = h2.nextElementSibling;
+    h2.onclick = () => text.style.display = "none";
+    h2.ondblclick = () => text.style.display = "block";
+  }
+</script>
+
+</html>

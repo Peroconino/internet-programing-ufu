@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11721BCC045</title>
+  <style>
+    body {
+      font-family: Helvetica, sans-serif;
+      padding: 0;
+      margin: 0;
+      background-color: lightgray;
+    }
+
+    header {
+      background-color: rgb(176, 47, 7);
+      color: white;
+      text-align: center;
+      padding: 32px;
+    }
+
+    img {
+      max-width: 150px;
+      border-radius: 4px;
+    }
+
+    .card {
+      display: flex;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 1px 1px 10px gray;
+      padding: 4px;
+      gap: 8px;
+
+    }
+
+    h2 {
+      color: gray;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+    }
+
+    main>div {
+      display: flex;
+
+
+      @media (min-width: 570px) {
+        width: 70%;
+        justify-content: center;
+      }
+
+      justify-content: normal;
+      width: 100%;
+
+      flex-wrap: wrap;
+      margin: 20px 0;
+      gap: 8px;
+    }
+
+    .card-body {
+      max-width: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    button {
+      background-color: #ddd;
+      border-radius: 12px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Lugares mais visitados</h1>
+  </header>
+  <main>
+    <div>
+      <div class="card">
+        <img src="https://furtado.prof.ufu.br/site/floresta.jpg" alt="Floresta">
+        <div class="card-body">
+          <h2>Floresta A</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae accusamus corporis dolor dignissimos
+            provident eveniet at consequatur non molestias eum molestiae</p>
+          <button type="button">Visitar</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://furtado.prof.ufu.br/site/floresta.jpg" alt="Floresta">
+        <div class="card-body">
+          <h2>Floresta B</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae accusamus corporis dolor dignissimos
+            provident eveniet at consequatur non molestias eum molestiaeat consequatur non molestias eum molestiaeat
+            consequatur non molestias eum molestiae</p>
+          <button type="button">Visitar</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://furtado.prof.ufu.br/site/floresta.jpg" alt="Floresta">
+        <div class="card-body">
+          <h2>Floresta C</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          <button type="button">Visitar</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>

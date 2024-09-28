@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11721BCC045</title>
+
+  <style>
+    label {
+      display: block;
+    }
+
+    input,
+    select {
+      margin-bottom: 12px;
+    }
+
+    label {
+      margin-bottom: 4px;
+    }
+
+    span,
+    span input {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <form action=" cadastraAluno.php." method="post">
+      <label for="matricula">Matricula:</label>
+      <input type="text" name="matricula" id="matricula" required>
+
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" id="nome">
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email">
+
+      <label for="nascimento">Data de nascimento:</label>
+      <input type="date" name="nascimento" id="nascimento">
+
+      <label for="estado">Estado de origem:</label>
+      <select name="estado" id="estado">
+        <option value="" selected>Selecione um estado</option>
+        <option value="MG">MG</option>
+        <option value="SP">SP</option>
+        <option value="RG">RG</option>
+      </select>
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" name="telefone" id="telefone"> <button type="button">Adicionar outro telefone</button>
+      <span></span>
+
+      <br>
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+  <script>
+    let addButton = document.querySelector("button");
+    let telefone = document.querySelector("#telefone");
+    let novosInputs = document.querySelector("span");
+    addButton.onclick = (e) => {
+      let novoTelefone = telefone.cloneNode();
+      novoTelefone.setAttribute("id", "");
+
+      novosInputs.appendChild(novoTelefone);
+    }
+  </script>
+</body>
+
+</html>
