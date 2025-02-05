@@ -1,0 +1,75 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Login</title>
+  <style>
+    body {
+      background-color: lightgray;
+    }
+
+    main {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 2px 2px 10px gray;
+      padding: 50px;
+    }
+
+
+    input {
+      display: block;
+      border: 1px solid gray;
+      margin-bottom: 20px;
+      padding: 5px 0;
+      border-radius: 5px;
+    }
+
+    input:focus {
+      box-shadow: 1px 1px 10px gray;
+      outline: none;
+    }
+
+    label {
+      font-size: large;
+      display: block;
+      color: rgb(95, 95, 95);
+      margin-bottom: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 5px 0;
+    }
+
+    .material-icons {
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h2>Cadastro</h2>
+    <form action="cadastra.php" method="post">
+      <label for="usuario">
+        Usuário
+      </label>
+      <input id="usuario" name="usuario" type="email" required maxlength="30">
+
+      <label for="senha">Senha</label>
+      <input type="password" name="senha" id="senha" required maxlength="30">
+      <button type="submit"><span class="material-icons">login</span>Enviar</button>
+    </form>
+    <a href="login.html">Já tenho login</a>
+  </main>
+</body>
+
+</html>
